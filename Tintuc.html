@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ưu đãi – Cà phê Mộc</title>
+
+  <!-- Font & Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --nau1: #3b2f2f;
+      --nau2: #6f4e37;
+      --be: #f6efe9;
+      --text: #5a3a2a;
+      --muted: #7a5f4a;
+      --white: #fff;
+    }
+
+    body {
+      background: var(--be);
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: var(--text);
+      margin: 0;
+    }
+
+    /* TITLE */
+    h1 {
+      text-align: center;
+      font-size: 44px;
+      font-weight: 700;
+      margin: 50px 0 12px;
+      color: var(--nau1);
+    }
+
+    .sub-title {
+      text-align: center;
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .divider {
+      height: 4px;
+      width: 80px;
+      background: var(--nau2);
+      margin: 10px auto 40px;
+      border-radius: 10px;
+    }
+
+    /* GRID */
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      padding: 0 22px 70px;
+    }
+
+    /* CARD */
+    .offer-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+    }
+
+    .offer-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+      color: var(--nau2);
+    }
+
+    .offer-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--nau1);
+    }
+
+    .offer-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .offer-btn {
+      text-decoration: none;
+      color: #fff;
+      background: var(--nau2);
+      padding: 8px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .offer-btn:hover {
+      background: var(--nau1);
+      transform: scale(1.05);
+    }
+
+    /* BACK BUTTON */
+    .back-wrapper {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .back-btn {
+      background: var(--nau2);
+      color: white;
+      padding: 12px 36px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: var(--nau1);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Ưu đãi Cà phê Mộc</h1>
+  <div class="sub-title">8 loại ưu đãi hấp dẫn dành cho bạn 🌿☕</div>
+  <div class="divider"></div>
+
+  <div class="container">
+    <div class="offers-grid">
+
+      <div class="offer-card">
+        <div class="offer-icon">🎓</div>
+        <div class="offer-title">Ưu đãi Sinh viên</div>
+        <div class="offer-desc">Giảm 20% khi xuất trình thẻ sinh viên. Thích hợp cho học tập và thư giãn cuối tuần.</div>
+        <a href="#" class="offer-btn">Xem chi tiết</a>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">🌿</div>
+        <div class="offer-title">Combo Healthy Mộc</div>
+        <div class="offer-desc">Mua 1 đồ uống + 1 topping organic → tặng 1 bánh nhẹ.</div>
+        <a href="#" class="offer-btn">Đặt ngay</a>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">🏷️</div>
+        <div class="offer-title">Giờ vàng ưu đãi</div>
+        <div class="offer-desc">Giảm 20% từ 14:00 – 16:00 cho tất cả món trong menu.</div>
+        <a href="#" class="offer-btn">Tham gia</a>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">🎁</div>
+        <div class="offer-title">Mộc Loyalty</div>
+        <div class="offer-desc">Tích điểm: 10 ly → tặng 1 ly signature.</div>
+        <a href="#" class="offer-btn">Đăng ký</a>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">🎶</div>
+        <div class="offer-title">Chill Weekend Deal</div>
+        <div class="offer-desc">Thứ 7 – CN: giảm 10% khi check-in kèm story.</div>
+        <a href="#" class="offer-btn">Xem sự kiện</a>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">☔</div>
+        <div class="offer-title">Ưu đãi mùa mưa</div>
+        <div class="offer-desc">Giảm 18% cho các món nóng khi trời mưa.</div>
+        <a href="#" class="offer-btn">Chi tiết</a>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">☕</div>
+        <div class="offer-title">Buổi sáng năng lượng</div>
+        <div class="offer-desc">Mua cà phê trước 10h → tặng topping miễn phí.</div>
+        <a href="#" class="offer-btn">Xem chi tiết</a>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-icon">🎂</div>
+        <div class="offer-title">Sinh nhật Mộc</div>
+        <div class="offer-desc">Trong tháng sinh nhật: mua 1 ly → tặng 1 ly.</div>
+        <a href="#" class="offer-btn">Nhận ưu đãi</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="back-wrapper">
+    <a class="back-btn" href="index.html">⬅ Quay về Trang chủ</a>
+  </div>
+
+</body>
+</html>

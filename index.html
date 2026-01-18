@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang chủ – Cà phê Mộc</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brown1:#3b2f2f;
+      --brown2:#6f4e37;
+      --cream:#f6efe9;
+      --text:#5a3a2a;
+      --accent:#b45309;
+    }
+    body{
+      margin:0;
+      background:var(--cream);
+      font-family:'Be Vietnam Pro',sans-serif;
+      color:var(--text);
+    }
+    nav{
+      background:#fff;
+      padding:14px 0;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    }
+    nav a{
+      text-decoration:none;
+      font-weight:600;
+      margin:0 18px;
+      color:var(--brown1);
+      transition:0.3s;
+    }
+    nav a:hover{color:var(--accent)}
+
+    /* HERO */
+    .hero{
+      width:100%;
+      height:92vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.36), rgba(0,0,0,0.36)),
+        url('https://images.unsplash.com/photo-1554118811-1e0d58224f24');
+      background-size:cover;
+      background-position:center;
+      border-radius:0 0 60px 60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      flex-direction:column;
+      padding:20px;
+    }
+    .hero h1{
+      font-size:52px;
+      font-weight:700;
+      text-shadow:0 2px 8px rgba(0,0,0,0.25);
+    }
+    .hero p{
+      font-size:20px;
+      max-width:700px;
+      opacity:0.9;
+    }
+    .btn-hero{
+      margin-top:18px;
+      background:var(--brown2);
+      color:#fff;
+      padding:12px 38px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:18px;
+      transition:0.3s;
+      border:none;
+    }
+    .btn-hero:hover{
+      background:var(--accent);
+      transform:scale(1.05);
+    }
+
+    /* SECTION TITLE */
+    .section-title{
+      font-size:32px;
+      text-align:center;
+      font-weight:700;
+      margin-bottom:30px;
+      color:var(--brown1);
+    }
+
+    /* ABOUT */
+    .about{
+      padding:90px 0;
+    }
+    .about .content{
+      max-width:900px;
+      margin:auto;
+      line-height:1.8;
+      font-size:18px;
+      text-align:center;
+    }
+
+    /* FEATURE HÌNH ẢNH QUÁN */
+    .feature-gallery{
+      padding:70px 0;
+      background:#fff;
+      border-radius:50px;
+      margin:20px 0;
+    }
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:22px;
+      max-width:1100px;
+      margin:auto;
+      padding:0 20px;
+    }
+    .gallery-item{
+      height:200px;
+      border-radius:18px;
+      background-size:cover;
+      background-position:center;
+      transition:0.3s;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    }
+    .gallery-item:hover{
+      transform:translateY(-4px) scale(1.02);
+    }
+
+    /* BEST SELLER */
+    .best-seller{
+      padding:90px 0;
+    }
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:24px;
+      max-width:1100px;
+      margin:auto;
+      padding:10px 20px;
+    }
+    .menu-card{
+      background:#fff;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 2px 12px rgba(0,0,0,0.07);
+      transition:0.3s;
+    }
+    .menu-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 4px 20px rgba(0,0,0,0.09);
+    }
+    .menu-thumb{
+      height:170px;
+      background-size:cover;
+      background-position:center;
+      filter:brightness(0.95);
+    }
+    .menu-body{padding:16px;text-align:center}
+    .menu-body .name{font-size:20px;font-weight:600}
+    .menu-body .price{color:var(--brown2);font-size:18px;font-weight:700;margin-top:5px}
+
+    /* BANNER TRÍCH DẪN */
+    .quote-banner{
+      padding:80px 20px;
+      background:var(--brown1);
+      color:#fff;
+      text-align:center;
+      border-radius:40px;
+      margin:40px 0;
+      font-size:20px;
+      font-weight:300;
+    }
+    .quote-banner span{
+      font-size:34px;
+      font-weight:700;
+      opacity:0.9;
+      display:block;
+      margin-bottom:10px;
+    }
+
+    /* BLOG/IDEAS */
+    .ideas{
+      padding:90px 0;
+    }
+    .ideas-grid{
+      max-width:1100px;
+      margin:auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:26px;
+    }
+    .idea-card{
+      background:#fff;
+      border-radius:20px;
+      padding:20px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+    .idea-card:hover{transform:translateY(-4px)}
+    .idea-card h3{
+      font-size:22px;
+      font-weight:700;
+      color:var(--brown1);
+      margin-bottom:10px;
+    }
+    .idea-card p{font-size:16px;line-height:1.6}
+
+    /* FOOTER */
+    footer{
+      padding:50px 20px;
+      background:#fff;
+      text-align:center;
+      color:var(--brown2);
+      font-size:15px;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <nav class="text-center">
+    <a href="index.html">Trang chủ</a>
+    <a href="Menu.html">Menu</a>
+    <a href="Gioithieu.html">Giới Thiệu</a>
+    <a href="Tintuc.html">Tin tức</a>
+    <a href="Lienhe.html">liên hệ</a>
+ </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Cà phê Mộc</h1>
+    <p>Không gian ấm áp • Đậm vị truyền thống • Chill theo cách của bạn</p>
+    <a href="menu.html"><button class="btn-hero">Xem Menu</button></a>
+  </header>
+
+  <section id="about" class="about">
+    <p class="section-title">Giới thiệu quán</p>
+    <div class="content">
+      Cà phê Mộc – nơi dành cho những khoảnh khắc sống chậm.Với hạt cà phê chọn lọc, pha thủ công bởi đội ngũ barista, Mộc mang đến hương vị tự nhiên, ấm áp nhưng không cầu kỳ. Không gian quán được thiết kế mộc mạc, thân thiện, phù hợp để thư giãn, trò chuyện hay làm việc.
+Mộc – một tách cà phê, một phút an yên. ☕💛
+    </div>
+  </section>
+
+  <section id="gallery" class="feature-gallery">
+    <p class="section-title">Không gian Cà phê Mộc</p>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b')"></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1521017432531-fbd92d768814')"></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb')"></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085')"></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8')"></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1541167760496-1628856ab772')"></div>
+    </div>
+  </section>
+
+  <!-- QUOTE BANNER -->
+  <div class="container">
+    <div class="quote-banner">
+      <span>"Mộc mạc, nhưng không nhạt nhoà"</span>
+      Giữ bản sắc, pha cảm xúc, đậm phong cách riêng.
+    </div>
+  </div>
+
+  <!-- BEST SELLER -->
+  <section id="best" class="best-seller">
+    <p class="section-title">🔥 Best Seller</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-thumb" style="background-image:url('https://file3.qdnd.vn/data/images/0/2025/10/05/upload_2080/gia%20ca%20phe%20thoibaotaichinhvietnam%20vn.jpg?dpi=150&quality=100&w=870')"></div>
+        <div class="menu-body">
+          <div class="name">Cà phê đen đá</div>
+          <div class="price">25.000 đ</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-thumb" style="background-image:url('https://images.unsplash.com/photo-1577968897966-3d4325b36b61')"></div>
+        <div class="menu-body">
+          <div class="name">Bạc xỉu</div>
+          <div class="price">32.000 đ</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-thumb" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXtYkBiYM_AEWth56eq5VeEwFGlnh_cYm7cw&s')"></div>
+        <div class="menu-body">
+          <div class="name">Trà đào cam sả</div>
+          <div class="price">38.000 đ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="ideas" class="ideas">
+    <p class="section-title">💡 Ý tưởng Mộc</p>
+    <div class="ideas-grid">
+      <div class="idea-card">
+        <h3>Góc đọc sách chill</h3>
+        <p>Thiết kế 1 corner nhỏ, có kệ sách và sofa đơn, khách có thể đọc sách miễn phí khi order nước.</p>
+      </div>
+      <div class="idea-card">
+        <h3>Ly giấy vẽ tay mỗi ngày</h3>
+        <p>Mỗi ngày quán sẽ vẽ 1 doodle khác nhau lên ly take-away, khách có thể sưu tầm, check-in.</p>
+      </div>
+      <div class="idea-card">
+        <h3>Playlist theo vibe</h3>
+        <p>Sáng bật nhạc chill, chiều deep focus, tối ambient – thay đổi playlist theo thời gian trong ngày.</p>
+      </div>
+      <div class="idea-card">
+        <h3>Tường chữ ký kỷ niệm</h3>
+        <p>Một bức tường gỗ cho phép khách ký tên + ngày ghé quán bằng marker, tạo dấu ấn riêng.</p>
+      </div>
+      <div class="idea-card">
+        <h3>Menu mùa giới hạn</h3>
+        <p>Các món theo mùa như Latte bí đỏ, trà quế gừng, cold brew trái cây... giúp khách luôn bất ngờ.</p>
+      </div>
+    <div class="idea-card">
+       <h3>Tường chữ ký kỷ niệm</h3>
+      <p>Tường gỗ “không im lặng” – nơi mọi vị khách có thể ký tên, ghi ngày và để lại dấu ấn của riêng mình bằng marker.</p>
+     </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 – Một sản phẩm tinh thần từ Cà phê, Gỗ và những ngày Chill.
+  </footer>
+
+</body>
+</html>
+

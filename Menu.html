@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu – Cà phê Mộc</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --nau1: #3b2f2f;
+      --nau2: #6f4e37;
+      --be: #f6efe9;
+      --text: #5a3a2a;
+      --muted: #7a5f4a;
+    }
+
+    body {
+      background: var(--be);
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: var(--text);
+      margin: 0;
+    }
+
+    /* ===== HERO ẢNH BÌA ===== */
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      position: relative;
+      margin-bottom: 40px;
+      height: 600px;
+
+      /* Căn giữa nội dung */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* căn dọc */
+      align-items: center;
+      /* căn ngang */
+      text-align: center;
+      padding: 20px;
+      border-radius: 0 0 80px 80px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(59, 47, 47, 0.6);
+      border-radius: 0 0 80px 80px;
+      /* bo giống hero */
+      z-index: 0;
+    }
+
+    .hero h1,
+    .hero p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      opacity: 0.9;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    /* ===== FILTER BAR ===== */
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      padding: 10px 18px;
+      border-radius: 20px;
+      background: #fff;
+      border: 2px solid var(--nau2);
+      color: var(--nau1);
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--nau2);
+      color: #fff;
+    }
+
+    /* ===== SEARCH ===== */
+    .search-box {
+      max-width: 500px;
+      width: 100%;
+      margin: auto;
+      border-radius: 999px;
+      padding: 14px 22px;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    /* ===== MENU GRID ===== */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      padding: 0 10px;
+    }
+
+    .menu-card {
+      background: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .thumb {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.9);
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .desc {
+      font-size: 15px;
+      color: var(--muted);
+      height: 42px;
+      overflow: hidden;
+    }
+
+    .price {
+      color: var(--nau2);
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back-btn {
+      background: var(--nau2);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+
+    .back-btn:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Chào mừng đến Menu của Cà phê Mộc</h1>
+    <p>Nơi vị cà phê hòa cùng không gian chill</p>
+  </header>
+
+</body>
+
+</html>
+
+<!-- FILTER + SEARCH -->
+<div class="container menu-section">
+  <div class="d-flex filter-bar">
+    <div class="filter-btn active" data-cat="all">Tất cả</div>
+    <div class="filter-btn" data-cat="Cà phê">Cà phê</div>
+    <div class="filter-btn" data-cat="Sinh tố">Sinh tố</div>
+    <div class="filter-btn" data-cat="Bánh ngọt">Bánh ngọt</div>
+    <div class="filter-btn" data-cat="Topping thêm">Topping</div>
+    <div class="filter-btn" data-cat="Kem">Kem</div>
+    <div class="filter-btn" data-cat="Trà ">Trà sữa</div>
+  </div>
+
+  <input type="text" id="searchMenu" class="form-control search-box" placeholder="🔍 Tìm món bạn yêu thích...">
+
+  <!-- MENU CARDS -->
+  <div id="menuGrid" class="menu-grid"></div>
+</div>
+
+<!-- BACK BUTTON -->
+<div class="text-center">
+  <a href="index.html" class="back-btn">⬅ Quay lại Trang chủ</a>
+</div>
+
+<script>
+  const grid = document.getElementById("menuGrid");
+
+  const MENU = [
+    { id: 1, cat: 'Cà phê', name: 'Cà phê sữa đá', price: 35, img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93' },
+    { id: 2, cat: 'Cà phê', name: 'Cà phê đen đá', price: 30, img: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187' },
+    { id: 3, cat: 'Cà phê', name: 'Bạc xỉu', price: 32, img: 'https://thuytinhocean.net/wp-content/uploads/2023/07/hinh-anh-ly-cafe-bac-xiu_6.jpg' },
+    { id: 4, cat: 'Cà phê', name: 'Latte', price: 45, img: 'https://images.unsplash.com/photo-1511920170033-f8396924c348' },
+    { id: 5, cat: 'Cà phê', name: 'Cappuccino', price: 48, img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085' },
+    { id: 6, cat: 'Cà phê', name: 'Espresso', price: 40, img: 'https://bizweb.dktcdn.net/100/270/753/articles/2c1.jpg?v=1652422906633' },
+    { id: 7, cat: 'Cà phê', name: 'Mocha', price: 50, img: 'https://dayphache.edu.vn/wp-content/uploads/2016/05/ca-phe-mocha-nong.jpg' },
+    { id: 8, cat: 'Cà phê', name: 'Cold Brew', price: 42, img: 'https://images.unsplash.com/photo-1561882468-9110e03e0f78' },
+    { id: 9, cat: 'Cà phê', name: 'cherry', price: 35, img: 'https://nhanvipcoffee.com.vn/wp-content/uploads/2024/05/huong-vi-cua-ca-phe-cherry-khong-dang-gat-nen-rat-duoc-phai-nu-yeu-thich.jpeg' },
+    { id: 10, cat: 'Cà phê', name: 'Arabica', price: 47, img: 'https://ranggiacongcaphe.vn/wp-content/uploads/2022/04/huong-vi-robusta.jpg' },
+
+
+    { id: 11, cat: 'Bánh ngọt', name: 'Tiramisu', price: 40, img: 'https://vietlotusfoods.com.vn/wp-content/uploads/2020/09/Lam-banh-tiramisu-chuan-Y-h4.jpg' },
+    { id: 12, cat: 'Bánh ngọt', name: 'Red Velvet', price: 42, img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587' },
+    { id: 13, cat: 'Bánh ngọt', name: 'Brownie Socola', price: 38, img: 'https://elsolmeatandwine.com.vn/vnt_upload/product/03_2019/ny_brownie_elsol_meat_and_wine_31.jpg' },
+    { id: 14, cat: 'Bánh ngọt', name: 'Phô mai chanh dây', price: 45, img: 'https://i.ytimg.com/vi/W6JJ5agArJo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBP8MPfdva02ufbMbVUujrY9AQLvw' },
+    { id: 15, cat: 'Bánh ngọt', name: 'Macaron', price: 30, img: 'https://cdn.tgdd.vn/2021/05/content/g22-800x500.jpg' },
+    { id: 16, cat: 'Bánh ngọt', name: 'Bánh su kem', price: 28, img: 'https://images.unsplash.com/photo-1551024601-bec78aea704b' },
+    { id: 17, cat: 'Bánh ngọt', name: 'Mousse dâu', price: 40, img: 'https://kisinfood.com.vn/wp-content/uploads/2024/03/Banh_mousse_dautay_kisinfood_KISIN-0350.jpg' },
+    { id: 18, cat: 'Bánh ngọt', name: 'Cheesecake Oreo', price: 47, img: 'https://file.hstatic.net/200000903595/file/61f61d7d512174c3d72b8d3fc6a41661_e2d9677cda72428fb3f20afb43ecffa3_grande.jpg' },
+    { id: 19, cat: 'Bánh ngọt', name: 'Bông lan', price: 65, img: 'https://bizweb.dktcdn.net/100/004/714/products/banh-bong-lan-pho-mai-nhat-ban.jpg?v=1614151353240' },
+    { id: 20, cat: 'Bánh ngọt', name: 'Cupcake', price: 30, img: 'https://cdn.tgdd.vn/Files/2022/03/18/1420984/cach-lam-banh-cupcake-de-thuong-vo-cung-don-gian-tai-nha-202203180749436765.jpg' },
+
+
+    { id: 21, cat: 'Sinh tố', name: 'Sinh tố bơ', price: 50, img: 'https://banhmibahuynh.vn/wp-content/uploads/2025/06/Sinh-to-Bo-Banh-mi-Sai-Gon-Madam-Win.jpg' },
+    { id: 22, cat: 'Sinh tố', name: 'Sinh tố xoài', price: 45, img: 'https://themes.sikidodemo.com/demo-website/web41/uploads/source/products/cach-lam-sinh-to-xoai-2.jpg' },
+    { id: 23, cat: 'Sinh tố', name: 'Sinh tố dâu', price: 47, img: 'https://bizweb.dktcdn.net/100/440/034/files/4-4b48803a-b0eb-4123-b2df-51f6935e7486.jpg?v=1650621397394' },
+    { id: 24, cat: 'Sinh tố', name: 'Sinh tố cam', price: 46, img: 'https://nhanvipcoffee.com.vn/wp-content/uploads/2025/03/d804aac4afba1ee447ab.jpg' },
+    { id: 25, cat: 'Sinh tố', name: 'Sinh tố dưa hấu', price: 40, img: 'https://mediamart.vn/images/uploads/2022/76da0d5f-776e-4918-aeeb-8155e8e2c1fa.jpg' },
+    { id: 26, cat: 'Sinh tố', name: 'Nước ép cam', price: 38, img: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba' },
+    { id: 27, cat: 'Sinh tố', name: 'Nước ép táo', price: 38, img: 'https://cdn2.fptshop.com.vn/unsafe/800x0/sinh_to_tao_7_f6daa2dcec.jpg' },
+    { id: 28, cat: 'Sinh tố', name: 'Sinh tố dứa bạc hà', price: 45, img: 'https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/164837/Originals/sinh-to-dua-5.jpg' },
+    { id: 29, cat: 'Sinh tố', name: 'Sinh tố Việt quất', price: 50, img: 'https://cdn.tgdd.vn/Files/2018/08/02/1106002/sinh-to-viet-quoc--mon-ngon-giau-dinh-duong-ban-nen-biet1_800x450.jpg' },
+    { id: 30, cat: 'Sinh tố', name: 'Cà rốt', price: 38, img: 'https://cdn.tgdd.vn/2020/09/CookRecipe/Avatar/sinh-to-bi-do-ca-rot-thumbnail.jpg' },
+
+
+    { id: 31, cat: 'Kem', name: 'Kem dâu', price: 30, img: 'https://www.shutterstock.com/image-photo/advertising-product-photo-three-spinning-260nw-2656598579.jpg' },
+    { id: 32, cat: 'Kem', name: 'Kem tươi', price: 28, img: 'https://thegioihinhanh.com/uploads/images/news/1431758658_news_2630.jpg' },
+    { id: 33, cat: 'Kem', name: 'Kem socola', price: 45, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHR4XcPCy3CLfmYV3WAzp-JBvKHI7Gaa5hAQ&s' },
+    { id: 34, cat: 'Kem', name: 'Kem ly', price: 25, img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi39jEoSyNypUckxce3QlyaBguPmR64_8WQac61IcnOQEtQXA4r0TXlhCHGzeY1B9RgCyeBB0R7Y-GjtgW_TAUZbAev7Fgtwdc9fpSdO7zHllnGL2asAAqRnhhLXTsxv9dnCADvw39KHbbcl97JRSY8kvUwz3xZcdQb4MY40o-UIGawDyYXIJ0_9NA-VZY/w700/(anhpng.com)-%20kem%20t%C6%B0%C6%A1i%2011.PNG' },
+    { id: 35, cat: 'Kem', name: 'Kem sữa', price: 45, img: 'https://static.hotdeal.vn/images/695/694824/500x500/146677-ngay-hoi-kem-tuoi-an-kem-thoa-thich-tai-halloween-ice-cream.jpg' },
+    { id: 36, cat: 'Kem', name: 'Kem ốc quế', price: 45, img: 'https://naidecor.vn/wp-content/uploads/2020/01/kem-oc-que-trang-tri-mo-phong-chup-anh-trung-bay-su-kien-1-scaled.jpg' },
+    { id: 37, cat: 'Kem', name: 'Kem hoa quả', price: 45, img: 'https://thoidai.com.vn/stores/news_dataimages/huyen.vu/042020/07/11/3812_kemsuachuahoaqua.jpg' }, // dàng sửa đây 
+    { id: 38, cat: 'Kem', name: 'Kem đậu đỏ', price: 40, img: 'https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/kem_dau_do_e2106f9d3f.png' },
+    { id: 39, cat: 'Kem', name: 'Kem vani', price: 30, img: 'https://img.freepik.com/premium-photo/purple-background-with-purple-background-some-ice-cream-cones_1230717-180752.jpg' },
+    { id: 40, cat: 'Kem', name: 'Kem sữa vị', price: 45, img: 'https://images.pexels.com/photos/1435862/pexels-photo-1435862.jpeg' },
+
+    { id: 41, cat: 'Topping thêm', name: 'Thạch phô mai', price: 5, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ZI6yhiXeO2HjpB02LEvJmBIvTbPCv666MlYqQfcThsAwZf-cEr1TwLWaPL9GMAVOfEY&usqp=CAU' },
+    { id: 42, cat: 'Topping thêm', name: 'Chân châu đường đen', price: 5, img: 'https://lypham.vn/wp-content/uploads/2024/11/topping-tran-chau-den.jpg' },
+    { id: 43, cat: 'Topping thêm', name: 'Thạch trái cây', price: 5, img: 'https://lypham.vn/wp-content/uploads/2024/11/cac-loai-topping-tra-sua-pho-bien.jpg' },
+    { id: 44, cat: 'Topping thêm ', name: 'Thạch sương sáo', price: 5, img: 'https://lypham.vn/wp-content/uploads/2024/11/suong-sao.jpg' },
+    { id: 45, cat: 'Topping thêm', name: 'Thạch Pudding', price: 5, img: 'https://viettuantea.vn/wp-content/uploads/2025/03/bot-thach-pudding-so-co-la-chocolate-pudding-jelly-powder-viet-tuan-1kg-8.jpg' },
+    { id: 46, cat: 'Topping thêm', nam: 'Hạt thủy tinh', price: 5, img: 'https://viettuantea.vn/wp-content/uploads/2025/03/hat-thuy-tinh-topping-tra-sua.jpg' },
+    { id: 47, cat: 'Topping thêm', name: 'Khúc bạch ', price: 5, img: 'https://viettuantea.vn/wp-content/uploads/2025/03/bot-lam-khuc-bach-panna-cotta-powder-viet-tuan-1kg-6.jpg' },
+    { id: 48, cat: 'Topping thêm', name: 'Thạch dừa', price: 5, img: 'https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163589/Originals/topping-tra-sua-7.jpg' },
+    { id: 49, cat: 'Topping thêm', name: 'Sữa chua thêm', price: 5, img: 'https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/9/7/1089816/Sua-Chua.jpeg' },
+    { id: 50, cat: 'Topping thêm', name: 'Hạt đác', price: 5, img: 'https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/163589/Originals/topping-tra-sua-14.jpg' },
+
+    { id: 51, cat: 'Trà ', name: 'Trà sữa mix vị', price: 25, img: 'https://static.kinhtedouong.vn/w640/images/upload/04162023/best-bubble-tea-flavors-body-image-1_189300e4.jpg' },
+    { id: 52, cat: 'Trà ', name: 'Trà sữa truyền thống', price: 30, img: 'https://cdn.tgdd.vn/Files/2021/08/10/1374160/hoc-cach-pha-tra-sua-o-long-dai-loan-thom-ngon-chuan-vi-ai-cung-me-202108100039248020.jpg' },
+    { id: 53, cat: 'Trà ', nam: 'Trà sữa kem trứng nướng', price: 45, img: 'https://cdn2.fptshop.com.vn/unsafe/cac_loai_tra_sua_7_d55756f70f.png' },
+    { id: 54, cat: 'Trà ', name: 'Trà vải thạch', price: 40, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEC3bTufbZmRqaBGdGij47xSiQpx2edIjolA&s' },
+    { id: 55, cat: 'Trà ', name: 'Trà chanh', price: 15, img: 'https://file.hstatic.net/200000538679/file/tra-dao-tra-vai-tra-chanh_e8649d2f7aa440e3be9917e9b7a45995_grande.jpg' },
+    { id: 56, cat: 'Trà ', name: 'Trà khúc bạch', price: 40, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlaHYm5Qroht_XCSLweFQAB8-pMB3iP09MQQ&s' },
+    { id: 57, cat: 'Trà ', name: 'Trà sữa hoa quả', price: 35, img: 'https://nafotech.com/wp-content/uploads/2020/01/tra-sua-e1578971633363.jpg' },
+    { id: 58, cat: 'Trà ', nam: 'Trà hoa quả nhiệt đới', price: 45, img: 'https://www.crane-tea.com/wp-content/uploads/2022/10/unnamed-24.jpg' },
+    { id: 59, cat: 'Trà ', name: 'Trà sữa trà xanh', price: 40, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC2BQRVHmIcZYKNSz_3CjRGPiTVKwOjoRz_A&s' },
+    { id: 60, cat: 'Trà ', name: 'Trà sữa milo dầm', price: 25, img: 'https://www.nestlemilo.com.vn/sites/default/files/2021-10/milo-lycheetea.jpg' },
+
+  ];
+
+
+
+  function renderCards(list) {
+    grid.innerHTML = list.map(item => `
+        <div class="menu-card">
+          <div class="thumb" style="background-image:url('${item.img}')"></div>
+          <div class="card-body">
+            <div class="name">${item.name}</div>
+            <div class="price">${item.price}.000 đ</div>
+          </div>
+        </div>
+      `).join('');
+  }
+
+  renderCards(MENU);
+
+  // Filter
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const cat = btn.getAttribute("data-cat");
+      const filtered = cat === "all" ? MENU : MENU.filter(m => m.cat === cat);
+      renderCards(filtered);
+    });
+  });
+
+  // Search
+  document.getElementById("searchMenu").addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase();
+    const filtered = MENU.filter(m => m.name.toLowerCase().includes(value));
+    renderCards(filtered);
+  });
+</script>
+</body>
+
+</html>
